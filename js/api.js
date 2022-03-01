@@ -1,11 +1,23 @@
+document.getElementById('error-message').style.display = 'none';
 const searchPhone =()=>{
     const searchFlied=document.getElementById('search-field');
     const searchText=searchFlied.value
     searchFlied.value='';
+    if(searchText == ''){
+       alert('please Enter Phone Name')
+    }
+    else{
+        
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
     .then(response=>response.json())
     .then(datas=>searchResult(datas.data))
+    .catch(error => displayError(error));
+    }
+}
+
+const displayError = error => {
+    document.getElementById('error-message').style.display = 'block';
 }
 const searchResult=Phones=>{
   const searchResult=document.getElementById('search-result');
@@ -34,7 +46,6 @@ const phoneDetails=(PhoneId)=>{
   .then(data=>displayPhoneDeatils(data))
 }
 const displayPhoneDeatils=deatils=>{
-    console.log(deatils.data)
     const phoneDetails=document.getElementById('phone-details')
     phoneDetails.textContent=''
     const div=document.createElement('div')
