@@ -46,6 +46,7 @@ const phoneDetails=(PhoneId)=>{
   .then(data=>displayPhoneDeatils(data))
 }
 const displayPhoneDeatils=deatils=>{
+    console.log(deatils)
     const phoneDetails=document.getElementById('phone-details')
     phoneDetails.textContent=''
     const div=document.createElement('div')
