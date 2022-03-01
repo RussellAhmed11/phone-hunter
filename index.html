@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Bank</title>
-    <!-- style css link -->
-    <link rel="stylesheet" href="./css/style.css">
     <!-- bootstarp css link -->
-    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+        <!-- style css link -->
+   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <h1>Phone Store</h1>
+<body class="bg-gray container">
+    <h1 class="text-center text-success">Phone Store</h1>
+    <div class="input-group mb-3 w-75 text-center mx-auto">
+        <input id="search-field" type="text" class="form-control" placeholder="Search your device" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="btn-search" onclick="searchPhone()">Search</button>
+      </div>
+
+      <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+    </div>
+      
     <!-- api js link -->
     <script src="./js/api.js"></script>
     <!-- bootstarp js link -->
