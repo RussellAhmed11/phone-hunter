@@ -11,8 +11,6 @@ const searchResult=Phones=>{
   const searchResult=document.getElementById('search-result');
   searchResult.textContent='';
   Phones.forEach(Phone => {
-      console.log(Phone)
-      console.log(Phone.brand)
       const div=document.createElement('div')
       div.classList.add('col');
       div.classList.add('mb-3');
@@ -23,9 +21,12 @@ const searchResult=Phones=>{
         <h3 class="card-title">Phone:${Phone.phone_name}</h3>
         <h5 class="card-title">Brand:${Phone.brand}</h5>
        </div>
-       <button class="btn btn-primary">Deatils</button>
+       <button onclick="phoneDetails(${Phone.slug})" class="btn btn-primary">Deatils</button>
       </div>
       `
       searchResult.appendChild(div)
   });
+}
+const phoneDetails=PhoneId=>{
+  console.log(PhoneId)
 }
