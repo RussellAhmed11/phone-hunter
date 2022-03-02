@@ -53,16 +53,16 @@ const displayPhoneDeatils=deatils=>{
     <div class="card h-100 border border-primary border-5 rounded-3">
      <img src="${deatils.data.image}" class="card-img-top" alt="...">
      <div class="card-body">
-        <h5 class="card-title">Name:${deatils.data.name}}</h5>
-        <p class="card-text">Release Date:${deatils.data.releaseDate}</p> 
-        <p class="card-text">Chipset:${deatils.data.mainFeatures.chipSet}</p>      
-        <p class="card-text">Display Size:${deatils.data.mainFeatures.displaySize}</p>
+        <h5 class="card-title">Name:${deatils?.data?.name}}</h5>
+        <p class="card-text">Release Date:${deatils.data.releaseDate ===''?'Realease date not fount':`${deatils?.data?.releaseDate}`}</p> 
+        <p class="card-text">Chipset:${deatils?.data?.mainFeatures?.chipSet}</p>      
+        <p class="card-text">Display Size:${deatils?.data?.mainFeatures?.displaySize}</p>
         <p class="card-text">Memory:${deatils.data.mainFeatures.memory}</p>
-        <p class="card-text">WLAN:${deatils.data.others.WLAN}</p>
-        <p class="card-text">Bluetooth:${deatils.data.others.Bluetooth}</p>
-        <p class="card-text">GPS:${deatils.data.others.GPS}</p>
-        <p class="card-text">NFC:${deatils.data.others.NFC}</p>
-        <p class="card-text">Radio:${deatils.data.others.Radio}</p>
+        <p class="card-text">WLAN:${deatils?.data?.others?.WLAN}</p>
+        <p class="card-text">Bluetooth:${deatils?.data?.others?.Bluetooth}</p>
+        <p class="card-text">GPS:${deatils?.data?.others?.GPS}</p>
+        <p class="card-text">NFC:${deatils?.data?.others?.NFC}</p>
+        <p class="card-text">Radio:${deatils?.data?.others?.Radio}</p>
       </div>
     </div>
     `;
