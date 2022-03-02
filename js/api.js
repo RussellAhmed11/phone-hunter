@@ -49,13 +49,13 @@ const displayPhoneDeatils=deatils=>{
     // clear result
     phoneDetails.textContent=''
     const div=document.createElement('div')
-    div.classList.add('card');
+    div.classList.add('col');
     div.classList.add('mb-3');
     div.innerHTML = `
     <div class="card h-100 border border-primary border-5 rounded-3">
      <img src="${deatils.data.image}" class="card-img-top" alt="...">
      <div class="card-body">
-        <h5 class="card-title">Name:${deatils?.data?.name}}</h5>
+        <h5 class="card-title">Name:${deatils?.data?.name}</h5>
         <p class="card-text">Release Date:${deatils.data.releaseDate ===''?'Realease date not fount':`${deatils?.data?.releaseDate}`}</p> 
         <p class="card-text">Chipset:${deatils?.data?.mainFeatures?.chipSet}</p>      
         <p class="card-text">Display Size:${deatils?.data?.mainFeatures?.displaySize}</p>
