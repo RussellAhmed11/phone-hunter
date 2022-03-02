@@ -6,7 +6,7 @@ const searchPhone =()=>{
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
     .then(response=>response.json())
-    .then(datas=>searchResult(datas.data))
+    .then(datas=>searchResult(datas.data.slice(0,20)))
     .catch(error => displayError(error));
 }
 
