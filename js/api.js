@@ -2,6 +2,7 @@ document.getElementById('error-message').style.display = 'none';
 const searchPhone =()=>{
     const searchFlied=document.getElementById('search-field');
     const searchText=searchFlied.value
+    // clear search result
     searchFlied.value='';        
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
@@ -15,6 +16,7 @@ const displayError = error => {
 }
 const searchResult=Phones=>{
   const searchResult=document.getElementById('search-result')
+  // add error messages
   if(Phones.length ==0){
     alert('Your device not found')
   }
@@ -43,8 +45,8 @@ const phoneDetails=(PhoneId)=>{
   .then(data=>displayPhoneDeatils(data))
 }
 const displayPhoneDeatils=deatils=>{
-    // console.log(deatils.data)
     const phoneDetails=document.getElementById('phone-details')
+    // clear result
     phoneDetails.textContent=''
     const div=document.createElement('div')
     div.classList.add('card');
@@ -57,7 +59,8 @@ const displayPhoneDeatils=deatils=>{
         <p class="card-text">Release Date:${deatils.data.releaseDate ===''?'Realease date not fount':`${deatils?.data?.releaseDate}`}</p> 
         <p class="card-text">Chipset:${deatils?.data?.mainFeatures?.chipSet}</p>      
         <p class="card-text">Display Size:${deatils?.data?.mainFeatures?.displaySize}</p>
-        <p class="card-text">Memory:${deatils.data.mainFeatures.memory}</p>
+        <p class="card-text">Memory:${deatils?.data?.mainFeatures?.memory}</p>
+        <p class="card-text">Sensors:${deatils?.data?.mainFeatures?.sensors}</p>
         <p class="card-text">WLAN:${deatils?.data?.others?.WLAN}</p>
         <p class="card-text">Bluetooth:${deatils?.data?.others?.Bluetooth}</p>
         <p class="card-text">GPS:${deatils?.data?.others?.GPS}</p>
